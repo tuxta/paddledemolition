@@ -16,6 +16,8 @@ class Ball(RoomObject):
         # -- Register to handle collisions with the Paddle and Bricks -- #
         self.register_collision_object('Paddle')
         self.register_collision_object('Brick')
+        self.register_collision_object('BrickHard')
+        self.register_collision_object('SpeedBrick')
 
         self.handle_key_events = True
 
@@ -61,9 +63,34 @@ class Ball(RoomObject):
             self.y_speed *= -1
             paddle_pos = self.rect.centerx - other.rect.centerx
             self.x_speed += paddle_pos/4
+
         elif other_type == 'Brick':
             self.bounce(other)
             self.room.brick_count -= 1
             self.delete_object(other)
             if self.room.brick_count <= 0:
                 self.room.running = False
+
+        elif other_type == 'BrickHard':
+            self.bounce(other)
+            if other.hit():
+                self.room.brick_count -= 1
+                self.delete_object(other)
+                if self.room.brick_count <= 0:
+                    self.room.running = False
+
+        elif other_type == 'SpeedBrick':
+            self.bounce(other)
+            self.delete_object(other)
+            self.room.brick_count -= 1
+            if self.y_speed < 0:
+                self.y_speed -= 5
+            else:
+                self.y_speed += 5
+            self.set_timer(150, self.slow_down)
+
+    def slow_down(self):
+        if self.y_speed < 0:
+            self.y_speed += 5
+        else:
+            self.y_speed -= 5

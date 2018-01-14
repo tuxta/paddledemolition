@@ -16,13 +16,13 @@ class Globals:
     window_name = 'GF Game'
 
     # - Set the order of the rooms - #
-    levels = ["BreakOut"]
+    levels = ["Level1", "Level2", "Level3"]
 
     # - Set the starting level - #
     start_level = 0
 
     # - Set this number to the level you want to jump to when the game ends - #
-    end_game_level = 4
+    end_game_level = 0
 
     # - Change variable to True to exit the program - #
     exiting = False
