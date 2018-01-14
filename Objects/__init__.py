@@ -4,3 +4,5 @@ from Objects.Brick import Brick
 from Objects.PressToStart import PressToStart
 from Objects.BrickHard import BrickHard
 from Objects.SpeedBrick import SpeedBrick
+from Objects.PlayButton import PlayButton
+from Objects.QuitButton import QuitButton
