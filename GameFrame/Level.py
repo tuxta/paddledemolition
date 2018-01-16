@@ -146,7 +146,7 @@ class Level:
     def delete_object(self, obj):
         for index, list_obj in enumerate(self.keyboard_objects):
             if list_obj is obj:
-                self.objects.pop(index)
+                self.keyboard_objects.pop(index)
         for index, list_obj in enumerate(self.mouse_objects):
             if list_obj is obj:
                 self.mouse_objects.pop(index)
