@@ -4,8 +4,8 @@ from Objects import QuitButton
 
 
 class Title(Level):
-    def __init__(self, screen):
-        Level.__init__(self, screen)
+    def __init__(self, screen, joysticks):
+        Level.__init__(self, screen, joysticks)
 
         self.set_background_image('Start_BG.png')
 

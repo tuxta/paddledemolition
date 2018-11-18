@@ -6,8 +6,8 @@ from Objects import *
 
 class Level2(Level):
 
-    def __init__(self, screen):
-        Level.__init__(self, screen)
+    def __init__(self, screen, joysticks):
+        Level.__init__(self, screen, joysticks)
 
         pygame.mouse.set_visible(False)
 
