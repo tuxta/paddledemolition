@@ -13,7 +13,7 @@ class Globals:
     LIVES = 3
 
     # - Set the Window display name - #
-    window_name = 'GF Game'
+    window_name = 'Paddle Demonlision'
 
     # - Set the order of the rooms - #
     levels = ["Title", "Level1", "Level2", "Level3"]
@@ -22,8 +22,8 @@ class Globals:
     start_level = 0
 
     # - Set this number to the level you want to jump to when the game ends - #
-    end_game_level = 0
-    
+    end_game_level = 4
+
     # - This variable keeps track of the room that will follow the current room - #
     # - Change this value to move through rooms in a non-sequential manner - #
     next_level = 0

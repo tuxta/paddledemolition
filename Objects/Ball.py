@@ -57,8 +57,7 @@ class Ball(RoomObject):
         else:
             self.room.running = False
 
-    def handle_collision(self, other):
-        other_type = type(other).__name__
+    def handle_collision(self, other, other_type):
         if other_type == 'Paddle':
             self.y_speed *= -1
             paddle_pos = self.rect.centerx - other.rect.centerx
